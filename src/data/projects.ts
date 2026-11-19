@@ -13,4 +13,11 @@ export const projects: Project[] = [
 		repo: 'https://github.com/chensongqin112/fantastic-battles-army-editor',
 		stack: ['TypeScript', 'React', 'Vite'],
 	},
+	{
+		title: 'Hua Rong Dao 华容道游戏 Sliding Block Game',
+		summary:
+			'The classic Chinese sliding blocks game built in Godot. Assets for game pieces are created from photographs taken from a physical wooden set.',
+		repo: 'https://github.com/chensongqin112/hua-rong-dao',
+		stack: ['GDScript'],
+	},
 ];
