@@ -4,6 +4,7 @@ import { site } from '../data/site';
 const tabs = [
 	{ href: '/', label: 'About' },
 	{ href: '/profile', label: 'Profile' },
+	{ href: '/experience', label: 'Experience' },
 	{ href: '/resume', label: 'Resume' },
 	{ href: '/portfolio', label: 'Portfolio' },
 ];
@@ -15,7 +16,10 @@ const current = pathname.length > 1 && pathname.endsWith('/') ? pathname.slice(0
 <header class="site-header">
 	<div class="site-header-row">
 		<a class="handle" href="/">Chen-Song Qin</a>
-		<a href={site.github}>GitHub</a>
+		<div class="site-links">
+			<a href={site.github}>GitHub</a>
+			<a href={site.linkedin}>LinkedIn</a>
+		</div>
 	</div>
 	<nav class="tabs" aria-label="Sections">
 		{

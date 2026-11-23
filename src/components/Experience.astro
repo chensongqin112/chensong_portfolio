@@ -1,0 +1,28 @@
+---
+import { experiences } from '../data/experience';
+---
+
+{
+	experiences.length > 0 && (
+		<section aria-labelledby="experience-heading">
+			<ul class="projects">
+				{experiences.map((item) => (
+					<li class="project">
+						<h2>{item.role}</h2>
+						<p class="experience-meta">
+							{[item.organization, item.location, item.dates].filter(Boolean).join(' · ')}
+						</p>
+						{item.summary && <p>{item.summary}</p>}
+						{item.points.length > 0 && (
+							<ul class="experience-points">
+								{item.points.map((point) => (
+									<li>{point}</li>
+								))}
+							</ul>
+						)}
+					</li>
+				))}
+			</ul>
+		</section>
+	)
+}

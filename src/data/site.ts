@@ -3,4 +3,5 @@ export const site = {
 	title: 'Chen-Song Qin - Senior Software Engineer',
 	description: 'Personal Website of Chen-Song Qin.',
 	github: 'https://github.com/chensongqin112',
+	linkedin: 'https://www.linkedin.com/in/chen-song-qin',
 };

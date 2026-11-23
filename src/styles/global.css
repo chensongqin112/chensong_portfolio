@@ -62,6 +62,11 @@ a:hover {
 	gap: 1rem;
 }
 
+.site-links {
+	display: flex;
+	gap: 1.25rem;
+}
+
 .tabs {
 	display: flex;
 	flex-wrap: wrap;
@@ -182,6 +187,20 @@ a:hover {
 .project p {
 	margin: 0;
 	color: var(--ink);
+}
+
+.project .experience-meta {
+	color: var(--muted);
+}
+
+.experience-points {
+	margin: 0.75rem 0 0;
+	padding-left: 1.15rem;
+	color: var(--ink);
+}
+
+.experience-points li + li {
+	margin-top: 0.35rem;
 }
 
 .stack {
