@@ -1,0 +1,30 @@
+---
+import { existsSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import Base from '../layouts/Base.astro';
+
+const resumeUrl = '/resume.pdf';
+const resumePath = fileURLToPath(new URL('../../public/resume.pdf', import.meta.url));
+const hasResume = existsSync(resumePath);
+---
+
+<Base title="Resume" description="Resume of Chen-Song Qin." wide>
+	{
+		hasResume ? (
+			<>
+				<object class="resume-frame" data={resumeUrl} type="application/pdf">
+					<p>
+						The resume PDF could not be shown here. <a href={resumeUrl}>Open the file</a>.
+					</p>
+				</object>
+				<p class="resume-link">
+					<a href={resumeUrl}>Open the PDF</a>
+				</p>
+			</>
+		) : (
+			<div class="resume-frame resume-placeholder">
+				<p>Place the resume PDF at <code>public/resume.pdf</code>.</p>
+			</div>
+		)
+	}
+</Base>

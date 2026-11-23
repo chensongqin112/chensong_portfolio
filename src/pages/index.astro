@@ -1,38 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
-import { projects } from '../data/projects';
 import { site } from '../data/site';
 ---
 
 <Base>
-	<main class="wrap">
-		<header class="site-header">
-			<a class="handle" href={site.github}>Chen-Song Qin</a>
-			<a href={site.github}>GitHub</a>
-		</header>
-		<p class="lede">A portfolio of programming projects.</p>
-		<section aria-labelledby="projects-heading">
-			<h1 id="projects-heading" class="section-label">Projects</h1>
-			<ul class="projects">
-				{
-					projects.map((project) => (
-						<li class="project">
-							<h2>
-								<a href={project.repo}>{project.title}</a>
-							</h2>
-							<p>{project.summary}</p>
-							<ul class="stack">
-								{project.stack.map((item) => (
-									<li>{item}</li>
-								))}
-							</ul>
-						</li>
-					))
-				}
-			</ul>
-		</section>
-		<footer class="site-footer">
-			<p>Add a project by editing <code>src/data/projects.ts</code>.</p>
-		</footer>
-	</main>
+	<p class="lede">{site.description}</p>
+    <p>Summary of work experience is listed here.</p>
+	<p>Selected programming projects are listed on the Portfolio tab.</p>
 </Base>

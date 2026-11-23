@@ -1,13 +1,15 @@
 ---
 import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
 import { site } from '../data/site';
 
 interface Props {
 	title?: string;
 	description?: string;
+	wide?: boolean;
 }
 
-const { title = site.title, description = site.description } = Astro.props;
+const { title = site.title, description = site.description, wide = false } = Astro.props;
 const pageTitle = title === site.title ? site.title : `${title} · ${site.handle}`;
 ---
 
@@ -23,6 +25,9 @@ const pageTitle = title === site.title ? site.title : `${title} · ${site.handle
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<slot />
+		<main class:list={['wrap', { 'wrap-wide': wide }]}>
+			<SiteHeader />
+			<slot />
+		</main>
 	</body>
 </html>

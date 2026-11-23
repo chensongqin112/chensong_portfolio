@@ -1,10 +1,10 @@
 :root {
-	color-scheme: light;
-	--bg: #f4f1ea;
-	--ink: #1c1915;
-	--muted: #5c564c;
-	--line: #d9d2c5;
-	--accent: #8c3a2f;
+	color-scheme: dark;
+	--bg: #343a40;
+	--ink: #d9d2c6;
+	--muted: #b7ad9f;
+	--line: #5c656c;
+	--accent: #e4a394;
 	--max: 40rem;
 }
 
@@ -25,7 +25,7 @@ body {
 	background: var(--bg);
 	font-family: 'Segoe UI', system-ui, sans-serif;
 	font-size: 1.0625rem;
-	line-height: 1.55;
+	line-height: 1.65;
 }
 
 a {
@@ -43,14 +43,51 @@ a:hover {
 	padding-block: 4.5rem 5rem;
 }
 
+.wrap-wide {
+	--max: 64rem;
+}
+
 .site-header {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+	margin-bottom: 3.5rem;
+	border-bottom: 1px solid var(--line);
+}
+
+.site-header-row {
 	display: flex;
 	justify-content: space-between;
 	align-items: baseline;
 	gap: 1rem;
-	margin-bottom: 3.5rem;
-	padding-bottom: 1rem;
-	border-bottom: 1px solid var(--line);
+}
+
+.tabs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem 1.5rem;
+	margin: 0;
+}
+
+.tabs a {
+	font-family: Consolas, 'Courier New', monospace;
+	font-size: 0.75rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: var(--muted);
+	padding-bottom: 0.75rem;
+	border-bottom: 2px solid transparent;
+	margin-bottom: -1px;
+}
+
+.tabs a:hover {
+	color: var(--ink);
+}
+
+.tabs a[aria-current='page'] {
+	color: var(--ink);
+	border-bottom-color: var(--accent);
 }
 
 .handle {
@@ -72,6 +109,39 @@ a:hover {
 	font-size: 1.75rem;
 	line-height: 1.3;
 	font-weight: 500;
+}
+
+.profile {
+	margin: 0;
+	max-width: 38rem;
+	font-family: Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
+	font-size: 1.2rem;
+	line-height: 1.6;
+}
+
+.resume-frame {
+	display: block;
+	width: 100%;
+	height: min(75vh, 52rem);
+	border: 1px solid var(--line);
+	background: #f7f4ee;
+}
+
+.resume-placeholder {
+	display: grid;
+	place-items: center;
+	padding: 2rem;
+	background: transparent;
+	color: var(--muted);
+	text-align: center;
+}
+
+.resume-placeholder p {
+	margin: 0;
+}
+
+.resume-link {
+	margin: 0.75rem 0 0;
 }
 
 .section-label {
@@ -111,7 +181,7 @@ a:hover {
 
 .project p {
 	margin: 0;
-	color: var(--muted);
+	color: var(--ink);
 }
 
 .stack {

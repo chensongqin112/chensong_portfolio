@@ -1,0 +1,29 @@
+---
+import { site } from '../data/site';
+
+const tabs = [
+	{ href: '/', label: 'About' },
+	{ href: '/profile', label: 'Profile' },
+	{ href: '/resume', label: 'Resume' },
+	{ href: '/portfolio', label: 'Portfolio' },
+];
+
+const pathname = Astro.url.pathname;
+const current = pathname.length > 1 && pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
+---
+
+<header class="site-header">
+	<div class="site-header-row">
+		<a class="handle" href="/">Chen-Song Qin</a>
+		<a href={site.github}>GitHub</a>
+	</div>
+	<nav class="tabs" aria-label="Sections">
+		{
+			tabs.map((tab) => (
+				<a href={tab.href} aria-current={current === tab.href ? 'page' : undefined}>
+					{tab.label}
+				</a>
+			))
+		}
+	</nav>
+</header>
