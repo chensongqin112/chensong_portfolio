@@ -1,22 +1,17 @@
 ---
 import { existsSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
+import { join } from 'node:path';
 import Base from '../layouts/Base.astro';
 
 const resumeUrl = '/resume.pdf';
-const resumePath = fileURLToPath(new URL('../../public/resume.pdf', import.meta.url));
-const hasResume = existsSync(resumePath);
+const hasResume = existsSync(join(process.cwd(), 'public', 'resume.pdf'));
 ---
 
 <Base title="Resume" description="Resume of Chen-Song Qin." wide>
 	{
 		hasResume ? (
 			<>
-				<object class="resume-frame" data={resumeUrl} type="application/pdf">
-					<p>
-						The resume PDF could not be shown here. <a href={resumeUrl}>Open the file</a>.
-					</p>
-				</object>
+				<iframe class="resume-frame" src={resumeUrl} title="Resume"></iframe>
 				<p class="resume-link">
 					<a href={resumeUrl}>Open the PDF</a>
 				</p>
