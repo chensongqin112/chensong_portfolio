@@ -1,9 +1,31 @@
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+
+/
+  X-Frame-Options: DENY
+
+/profile
+  X-Frame-Options: DENY
+
+/profile/
+  X-Frame-Options: DENY
+
+/resume
+  X-Frame-Options: DENY
+
+/resume/
+  X-Frame-Options: DENY
+
+/portfolio
+  X-Frame-Options: DENY
+
+/portfolio/
+  X-Frame-Options: DENY
+
+/404.html
   X-Frame-Options: DENY
 
 /resume.pdf
-  X-Frame-Options: SAMEORIGIN
   Content-Type: application/pdf
   Content-Disposition: inline
